@@ -77,7 +77,7 @@ class Output
         table_rows << [jobvalue.name,jobvalue.userid,jobvalue.number,jobvalue.changeNumber,jobvalue.lastChangeNumber]
       end
       #prints to table
-      table = Terminal::Table.new :headings => ['Name', 'UserID','Number','ChangeList','lastChangeList'] , :rows => table_rows
+      table = Terminal::Table.new :headings => ['Name', 'UserID','Number','ChangeList','lastChangeList'] , :rows => table_rows.sort
       table.align_column(5, :right)
       puts table
     end
