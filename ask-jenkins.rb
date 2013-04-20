@@ -80,7 +80,7 @@ jobslist.xmlresponse.each_element('hudson/job') do |jobelement|
   joburl = jobelement.elements['url'].text
   joburllateststable = jobelement.elements['url'].text + 'lastStableBuild/api/xml/'
   jobxml = XML.new(joburllateststable,jenkins_authentication)
-  #jobxml can either be returbed or cane be nil - nil results if lastStableBuld does not return a value
+  #jobxml can either be returbed or cane be nil - nil results if lastStableBuild does not return a value
   if jobxml.xmlresponse.nil?
     joburllastbuild = jobelement.elements['url'].text + 'lastBuild/api/xml/'
     jobxml = XML.new(joburllastbuild,jenkins_authentication)
